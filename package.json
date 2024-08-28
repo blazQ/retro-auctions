@@ -1,0 +1,21 @@
+{
+  "name": "retro-auctions",
+  "version": "1.0.0",
+  "description": "A smart-contract based implementation of a DApp that enables users to auction for their favorite retro games.",
+  "main": "truffle.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "dev": "lite-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "blaz",
+  "license": "ISC",
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.4.2"
+  },
+  "devDependencies": {
+    "lite-server": "^2.3.0"
+  }
+}
