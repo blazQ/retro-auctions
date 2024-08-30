@@ -36,5 +36,5 @@ chmod +x ./setup.sh
 ./setup.sh
 ```
 
-And it should migrate and test the contract, then start the React Dapp.
+And it should migrate and test the contract, then start the React Dapp as per DAPP Readme.
 
