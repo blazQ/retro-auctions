@@ -73,7 +73,9 @@ contract("GameAuction", accounts => {
 
         // Fast forward time to end auction
         await new Promise(resolve => setTimeout(resolve, 2000)); // Wait for 2 seconds
-
+        const deposit = web3.utils.toWei("1", "ether");
+        // Depositing funds to enable reward.
+        await gameAuction.depositFunds({from: admin, value: deposit});
         // End the auction
         await gameAuction.endAuction(gameId, { from: admin });
 

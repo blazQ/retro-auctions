@@ -1,0 +1,271 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* Auction Grid (modifica per layout orizzontale) */
+.auction-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Auction Card */
+.auction-card {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  transition: transform 0.2s;
+  min-width: 200px; /* Assicura una larghezza minima delle card */
+  flex: 0 0 auto; /* Impedisce il ridimensionamento automatico delle card */
+}
+
+.auction-card:hover {
+  transform: scale(1.05);
+}
+
+/* Immagini nelle Auction Card */
+.auction-card img {
+  width: 100%;
+  height: 150px; /* Limite altezza */
+  object-fit: cover; /* Mantiene le proporzioni dell'immagine tagliando l'eccesso */
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+/* Big "Create New Auction" Button */
+.create-auction-button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 5px;
+  font-size: 1.2em;
+  cursor: pointer;
+  margin: 20px auto;
+  display: block; /* Centrato orizzontalmente */
+  text-align: center;
+  transition: background-color 0.3s;
+}
+
+.create-auction-button:hover {
+  background-color: #218838;
+}
+
+/* Create Form Container (nascondilo per default) */
+.create-auction-container {
+  display: none; /* Nasconde il form inizialmente */
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+.create-auction-container.active {
+  display: flex; /* Mostra il form quando è attivo */
+}
+
+.create-form {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 30px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.create-form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.8em;
+  color: #333;
+}
+
+.create-form input[type="text"],
+.create-form textarea,
+.create-form input[type="number"],
+.create-form input[type="file"] {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  font-size: 1em;
+}
+
+.create-form textarea {
+  height: 100px;
+  resize: none;
+}
+
+.create-form button {
+  width: 100%;
+  padding: 12px;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.create-form button:hover {
+  background-color: #0056b3;
+}
+
+/* Card Container per l'Auction Detail */
+.auction-detail-card {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.auction-detail-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.auction-detail-card h2 {
+  font-size: 1.8em;
+  margin-bottom: 10px;
+  color: #333;
+  text-align: center;
+}
+
+.auction-detail-card p {
+  font-size: 1em;
+  margin: 10px 0;
+  color: #555;
+}
+
+.auction-detail-card p strong {
+  font-weight: bold;
+  color: #000;
+}
+
+.auction-detail-card button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  margin-top: 20px;
+  font-size: 1.1em;
+  transition: background-color 0.3s;
+}
+
+.auction-detail-card button:hover {
+  background-color: #0056b3;
+}
+
+/* Stile per il commit e reveal form */
+.commit-form, .reveal-form {
+  margin-top: 20px;
+}
+
+.commit-form h3, .reveal-form h3 {
+  font-size: 1.5em;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.commit-form input, .reveal-form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+.commit-form button, .reveal-form button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 1.1em;
+  transition: background-color 0.3s;
+}
+
+.commit-form button:hover, .reveal-form button:hover {
+  background-color: #218838;
+}
+
+.donation-form-container {
+  display: none; /* Inizialmente nascosto */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  align-items: center;
+  justify-content: center;
+}
+
+.donation-form-container.active {
+  display: flex; /* Mostra il form quando attivo */
+}
+
+.donation-form {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 400px;
+  margin: 20px auto;
+  text-align: center;
+}
+
+.donation-form h2 {
+  margin-bottom: 20px;
+}
+
+.donation-form input {
+  width: calc(100% - 22px);
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.donation-form button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 1em;
+}
+
+.donation-form button:hover {
+  background-color: #0056b3;
+}
+
